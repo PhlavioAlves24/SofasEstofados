@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SofáChic - Seu Estilo, Seu Conforto</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (para ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts (Montserrat e Lora) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Animate.css (para animações mais elaboradas no Hero) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">SofásEstofados</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#hero">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produtos">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-primary position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fas fa-shopping-cart"></i> Carrinho
+                            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
+                                0
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center text-center">
+        <div class="hero-background-slider">
+            <div class="hero-bg-slide active" style="background-image: url('images/hero-bg.jpg');"></div>
+            <div class="hero-bg-slide" style="background-image: url('images/hero-bg1.jpg');"></div>
+            <div class="hero-bg-slide" style="background-image: url('images/hero-bg2.jpg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="hero-title animate__animated animate__fadeInDown">Seu Lar, Seu Estilo Incomparável</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Combinando design sofisticado com o máximo de conforto.</p>
+            <a href="#produtos" class="btn btn-lg btn-primary hero-button animate__animated animate__zoomIn animate__delay-2s">
+                Explorar Coleção <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Produtos Section -->
+    <section id="produtos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Nossos Sofás Exclusivos</h2>
+            <div class="row">
+                <!-- Produto 1 -->
+                <div class="col-lg-4 col-md-6 mb-4 product-card-animation">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="images/Sofa1_azul.jpeg" class="card-img-top product-image" alt="Sofá Modelo Clássico Azul" id="sofa1-image">
+                        <div class="card-body">
+                            <h5 class="card-title">Sofá Elegance Moderno</h5>
+                            <p class="card-text">Design contemporâneo com máximo conforto. Perfeito para ambientes sofisticados.</p>
+                            <p class="price">R$ 2.499,90</p>
+                            <div class="colors mb-3">
+                                <span class="color-swatch active" data-image="images/Sofa1_azul.jpeg" data-color="Azul" style="background-color: #3b5998;" onclick="changeImage('sofa1-image', this)"></span>
+                                <span class="color-swatch" data-image="Sofa1_bege.jpeg" data-color="Bege" style="background-color: #f5f5dc;" onclick="changeImage('sofa1-image', this)"></span>
+                                <span class="color-swatch" data-image="images/Sofa1_cinza.jpeg" data-color="Cinza" style="background-color: #808080;" onclick="changeImage('sofa1-image', this)"></span>
+                            </div>
+                            <button class="btn btn-primary w-100 add-to-cart-btn" data-id="1" data-name="Sofá Elegance Moderno" data-price="2499.90" data-image="images/Sofa1_azul.jpeg">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto 2 -->
+                <div class="col-lg-4 col-md-6 mb-4 product-card-animation">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="images/Sofa1_bege.jpeg" class="card-img-top product-image" alt="Sofá Confort Prime Bege" id="sofa2-image">
+                        <div class="card-body">
+                            <h5 class="card-title">Sofá Confort Prime</h5>
+                            <p class="card-text">Aconchego e durabilidade em um design versátil para sua sala.</p>
+                            <p class="price">R$ 1.999,00</p>
+                            <div class="colors mb-3">
+                                <span class="color-swatch" data-image="Sofa1_azul.jpeg" data-color="Azul" style="background-color: #3b5998;" onclick="changeImage('Sofa2-image', this)"></span>
+                                <span class="color-swatch active" data-image="Sofa1_bege.jpeg" data-color="Bege" style="background-color: #f5f5dc;" onclick="changeImage('Sofa2-image', this)"></span>
+                                <span class="color-swatch" data-image="Sofa1_cinza.jpeg" data-color="Cinza" style="background-color: #808080;" onclick="changeImage('sofa2-image', this)"></span>
+                            </div>
+                             <button class="btn btn-primary w-100 add-to-cart-btn" data-id="2" data-name="Sofá Confort Prime" data-price="1999.00" data-image="Sofa1_bege.jpeg">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Produto 3 -->
+                <div class="col-lg-4 col-md-6 mb-4 product-card-animation">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="images/Sofa1_cinza.jpeg" class="card-img-top product-image" alt="Sofá Minimal Cinza" id="sofa3-image">
+                        <div class="card-body">
+                            <h5 class="card-title">Sofá Minimal Decor</h5>
+                            <p class="card-text">Linhas retas e elegância minimalista para espaços modernos.</p>
+                            <p class="price">R$ 2.150,50</p>
+                            <div class="colors mb-3">
+                                <span class="color-swatch" data-image="Sofa1_azul.jpeg" data-color="Azul" style="background-color: #3b5998;" onclick="changeImage('sofa3-image', this)"></span>
+                                <span class="color-swatch" data-image="Sofa1_bege.jpeg" data-color="Bege" style="background-color: #f5f5dc;" onclick="changeImage('sofa3-image', this)"></span>
+                                <span class="color-swatch active" data-image="Sofa1_cinza.jpeg" data-color="Cinza" style="background-color: #808080;" onclick="changeImage('sofa3-image', this)"></span>
+                            </div>
+                             <button class="btn btn-primary w-100 add-to-cart-btn" data-id="3" data-name="Sofá Minimal Decor" data-price="2150.50" data-image="Sofa1_cinza.jpeg">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="section-title mb-4">Fale Conosco</h2>
+            <p>Tem alguma dúvida? Entre em contato!</p>
+            <p>Email: contato@sofachic.com | Telefone: (XX) XXXXX-XXXX</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white">
+        <div class="container">
+            <p class="mb-0"></p> <!-- O conteúdo será preenchido pelo JS -->
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered"> <!-- modal-dialog-centered para centralizar verticalmente -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Seu Carrinho de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items-container">
+                        <p id="empty-cart-message" class="text-center py-4">Seu0 carrinho está vazio. Que tal explorar nossos sofás?</p>
+                    </div>
+                </div>
+                <div class="modal-footer d-block"> <!-- d-block para controle total do layout interno -->
+                    <div class="d-flex justify-content-between align-items-center mb-3 px-3 pt-2">
+                        <h4 class="mb-0 cart-total-label">Total:</h4>
+                        <h4 class="mb-0" id="cart-total">R$ 0,00</h4>
+                    </div>
+                    <div class="d-flex justify-content-end p-3">
+                        <button type="button" class="btn btn-outline-secondary me-2" data-bs-dismiss="modal">Continuar Comprando</button>
+                        <button type="button" class="btn btn-primary btn-checkout" id="checkout-btn" disabled>Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS Personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
